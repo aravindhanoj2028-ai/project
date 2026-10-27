@@ -1,0 +1,9 @@
+{
+  "name": "bustrack-admin-json",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bus arrival/departure timetable with admin CRUD and JSON file storage",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=20" }
+}

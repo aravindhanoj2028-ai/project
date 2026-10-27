@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#102a43"><title>Admin — BusTrack</title><link rel="stylesheet" href="styles.css"></head>
+<body><header class="topbar"><a class="brand" href="/"><span class="brand-icon">B</span>BusTrack</a><nav><a href="/">Timetable</a><a class="active" href="/admin.html">Admin</a></nav></header>
+<main class="admin-shell"><div class="admin-title"><div><p class="eyebrow dark">CONTROL PANEL</p><h1>Manage bus schedule</h1><p>Add buses, update timings, platforms and status. Saved changes appear on the public timetable.</p></div><a class="button button-light" href="/">View timetable ↗</a></div>
+<section id="loginCard" class="panel login-panel"><div class="panel-icon">🔐</div><h2>Admin sign in</h2><p>Enter the admin password configured for this deployment.</p><form id="loginForm"><label>Admin password<input id="adminPassword" type="password" required autocomplete="current-password" placeholder="Admin password"></label><button class="button" type="submit">Sign in</button></form><p id="loginMessage" class="message" aria-live="polite"></p><p class="hint">For local testing only, default password is <code>ChangeThisAdminPassword123!</code>. Set a private <code>ADMIN_PASSWORD</code> before public deployment.</p></section>
+<section id="adminPanel" hidden>
+<div class="admin-toolbar"><div><h2 id="formHeading">Add a bus</h2><p>Fields marked required must be completed.</p></div><button id="logout" class="button button-light">Sign out</button></div>
+<div class="panel"><form id="busForm" class="bus-form">
+<input type="hidden" id="busId">
+<label>Bus number *<input id="busNumber" required maxlength="20" placeholder="e.g. B101"></label>
+<label>Route name *<input id="routeName" required maxlength="80" placeholder="e.g. City Centre Express"></label>
+<label>Bus type<input id="busType" maxlength="60" placeholder="e.g. Express · AC"></label>
+<label>From *<input id="from" required maxlength="80" placeholder="Starting stop"></label>
+<label>To *<input id="to" required maxlength="80" placeholder="Destination"></label>
+<label>Arrival time *<input id="arrival" type="time" required></label>
+<label>Departure time *<input id="departure" type="time" required></label>
+<label>Platform *<input id="platform" required maxlength="20" placeholder="e.g. P-01"></label>
+<label>Status *<select id="busStatus"><option>On Time</option><option>Boarding</option><option>Delayed</option><option>Departed</option><option>Cancelled</option></select></label>
+<label>Direction *<select id="busDirection"><option value="departure">Departure</option><option value="arrival">Arrival</option><option value="both">Both</option></select></label>
+<div class="form-actions"><button class="button" type="submit" id="saveButton">Save bus</button><button class="button button-light" type="button" id="resetForm">Clear form</button></div></form><p id="formMessage" class="message" aria-live="polite"></p></div>
+<div class="panel list-panel"><div class="list-heading"><div><h2>Current buses</h2><p id="adminCount">Loading…</p></div><button id="refresh" class="button button-light">Refresh list</button></div><div class="table-scroll"><table><thead><tr><th>BUS</th><th>ROUTE</th><th>FROM → TO</th><th>ARRIVAL</th><th>DEPARTURE</th><th>PLATFORM</th><th>STATUS</th><th>ACTIONS</th></tr></thead><tbody id="adminRows"></tbody></table></div></div>
+</section><footer><span>BusTrack Administration</span><span>Changes are saved to the server JSON file.</span></footer></main><script src="admin.js"></script></body></html>

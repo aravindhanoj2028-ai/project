@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "busNumber": "B101",
+    "routeName": "City Centre Express",
+    "busType": "Express AC",
+    "from": "Central Station",
+    "to": "City Centre",
+    "arrival": "09:10",
+    "departure": "09:20",
+    "platform": "P-01",
+    "status": "On Time",
+    "direction": "departure"
+  },
+  {
+    "id": 2,
+    "busNumber": "B204",
+    "routeName": "University Loop",
+    "busType": "Local Non-AC",
+    "from": "North Terminal",
+    "to": "University",
+    "arrival": "09:25",
+    "departure": "09:35",
+    "platform": "P-03",
+    "status": "Boarding",
+    "direction": "departure"
+  },
+  {
+    "id": 3,
+    "busNumber": "B315",
+    "routeName": "Airport Link",
+    "busType": "Express",
+    "from": "Airport",
+    "to": "Central Station",
+    "arrival": "09:40",
+    "departure": "09:45",
+    "platform": "P-02",
+    "status": "On Time",
+    "direction": "arrival"
+  }
+]
